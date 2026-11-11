@@ -11,7 +11,7 @@ import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0
 
 // ---------- settings ----------
 const WORKER_URL = "https://ask-your-data-api.chukwudi-ogbuta.workers.dev";
-const DATA_URL = new URL("../products.parquet", location.href).href;   // where the data file is served from
+const DATA_URL = new URL("products_web.parquet", location.href).href;   // lighter copy of the data made for the website
 const $ = (id) => document.getElementById(id);
 
 // ---------- text in both languages ----------
@@ -28,7 +28,7 @@ const T = {
     mistakes: "AI can make mistakes. Flip any answer to see the query behind it.",
     hello: "Hi. Ask me anything about 400,062 packaged foods sold in France, in plain English or French. I translate your question into an SQL query, check it and run it. Tap See query on any answer to compare the query with what you asked.",
     tryThese: "Try one of these:", alsoAsk: "You could also ask:", topicIntro: "Here are some questions about {x}:",
-    loading: "Loading the products into your browser…", thinking: "Writing the query…", running: "Running it on the data…", retry: "Fixing the query…",
+    loading: "Loading the products into your browser…", waitData: "Query ready, waiting for the data to finish loading…", thinking: "Writing the query…", running: "Running it on the data…", retry: "Fixing the query…",
     report: "Report a problem", reportAsk: "Send this answer for review? The question, answer and query are attached.", reportPh: "Anything to add? (optional)", reportSend: "Send report", reportCancel: "Cancel", reportThanks: "Thanks, report sent ✓", reportFail: "Couldn't send the report. Please try again.",
     fAnswer: "Answer", fQuery: "See query", backTitle: "The query behind this answer",
     cWritten: "Written by the AI ({m})", cChip: "Prepared question: query written and checked in advance",
@@ -55,7 +55,7 @@ const T = {
     mistakes: "L'IA peut se tromper. Retournez une réponse pour voir la requête derrière.",
     hello: "Bonjour. Posez-moi n'importe quelle question sur 400 062 produits emballés vendus en France, en français ou en anglais. Je traduis votre question en requête SQL, je la vérifie puis je l'exécute. Touchez Voir la requête sur une réponse pour la comparer à votre question.",
     tryThese: "Essayez par exemple :", alsoAsk: "Vous pourriez aussi demander :", topicIntro: "Quelques questions sur le thème {x} :",
-    loading: "Chargement des produits dans votre navigateur…", thinking: "Écriture de la requête…", running: "Exécution sur les données…", retry: "Correction de la requête…",
+    loading: "Chargement des produits dans votre navigateur…", waitData: "Requête prête, chargement des données en cours…", thinking: "Écriture de la requête…", running: "Exécution sur les données…", retry: "Correction de la requête…",
     report: "Signaler un problème", reportAsk: "Envoyer cette réponse pour vérification ? La question, la réponse et la requête sont jointes.", reportPh: "Un commentaire ? (facultatif)", reportSend: "Envoyer", reportCancel: "Annuler", reportThanks: "Merci, signalement envoyé ✓", reportFail: "Le signalement n'a pas pu être envoyé. Réessayez.",
     fAnswer: "Réponse", fQuery: "Voir la requête", backTitle: "La requête derrière cette réponse",
     cWritten: "Écrite par l'IA ({m})", cChip: "Question préparée : requête écrite et vérifiée à l'avance",
@@ -154,6 +154,7 @@ function followUps(sql) {
 
 // ---------- DuckDB in the browser ----------
 let conn, TOTAL = 0, ready = false;
+let markReady; const dbReady = new Promise(r => { markReady = r; });   // resolves when the data has finished loading
 const known = { food_group: new Set(), food_subgroup: new Set(), brand: new Set(), brandTop: [] };
 
 async function startDb() {
@@ -166,9 +167,20 @@ async function startDb() {
   await db.open({ query: { castBigIntToDouble: true, castDecimalToDouble: true } });
   conn = await db.connect();
   // download the data file once and load it as a table, so every query after is fast
-  const buf = new Uint8Array(await (await fetch(DATA_URL)).arrayBuffer());
+  const res = await fetch(DATA_URL);
+  const total = Number(res.headers.get("content-length")) || 0;
+  let buf;
+  if (res.body && total) {   // read in pieces so we can show how far the download is
+    const reader = res.body.getReader(), parts = []; let got = 0;
+    for (;;) {
+      const { done, value } = await reader.read(); if (done) break;
+      parts.push(value); got += value.length;
+      const msg = $("loadingMsg"); if (msg) msg.textContent = `${t("loading")} ${Math.round(100 * got / total)}%`;
+    }
+    buf = new Uint8Array(got); let pos = 0; for (const part of parts) { buf.set(part, pos); pos += part.length; }
+  } else buf = new Uint8Array(await res.arrayBuffer());
   await db.registerFileBuffer("products.parquet", buf);
-  await conn.query("CREATE TABLE products AS SELECT * FROM read_parquet('products.parquet')");
+  await conn.query("CREATE TABLE products AS SELECT *, NULL::VARCHAR AS code FROM read_parquet('products.parquet')");
   TOTAL = Number((await rows("SELECT COUNT(*) AS n FROM products"))[0].n);
   // real values, for the value check
   for (const r of await rows("SELECT DISTINCT food_group AS v FROM products WHERE food_group IS NOT NULL")) known.food_group.add(r.v);
@@ -341,7 +353,7 @@ function layoutSql(sql) {
     .replace(/\s+(AND|OR)\s+(?![^(]*\))/gi, (m, k) => "\n  " + k.toUpperCase() + " ")
     .replace(/^SELECT\s+/i, "SELECT ");
 }
-function setBusy(b) { document.querySelectorAll("#go, .starter, .chip, .topics button").forEach(x => x.disabled = b || !ready); }
+function setBusy(b) { document.querySelectorAll("#go, .starter, .chip, .topics button").forEach(x => x.disabled = b); }
 
 // when every model is at its limit: say when it frees up, and offer three ready-made questions
 function limitReached(res) {
@@ -358,7 +370,7 @@ async function askWorker(payload) {
 const needsGuess = () => $("guessOn").checked && $("guess").value.trim() === "";
 
 async function submit(question, prepared) {
-  if (!ready || !question) return;
+  if (!question) return;
   if (needsGuess()) { $("q").value = question; pendingPrepared = prepared || null; botSay(esc(t("needGuess"))); $("guess").focus(); return; }
   $("q").value = ""; pendingPrepared = null;
   meSay(question);
@@ -368,6 +380,7 @@ async function submit(question, prepared) {
     if (prepared) {   // prepared question: no AI needed
       asked.add(prepared.id);
       remember("user", question); remember("assistant", JSON.stringify({ status: "ok", sql: prepared.sql }));
+      if (!ready) { wait.textContent = t("waitData"); await dbReady; }
       const r = await runSql(prepared.sql);
       wait.remove(); return answer(r, { sql: prepared.sql, prepared: true, question });
     }
@@ -390,7 +403,8 @@ async function submit(question, prepared) {
     if (ans.status === "not_a_data_question") return say("offTopic");
     if (ans.status !== "ok") return say("error");
 
-    // value check, run, and the second chance
+    // value check, run, and the second chance (they need the data, so wait for it if it is still loading)
+    if (!ready) { wait.textContent = t("waitData"); await dbReady; }
     wait.textContent = t("running");
     let r, problem = checkValues(ans.sql), retried = false;
     if (problem) problem = "Some values in that query do not exist in the data. " + problem;
@@ -598,5 +612,5 @@ $("q").addEventListener("keydown", e => { if (e.key === "Enter") $("go").click()
 $("guess").addEventListener("keydown", e => { if (e.key === "Enter") $("go").click(); });
 
 applyLang();
-startDb().then(() => { ready = true; $("loadingMsg")?.remove(); setBusy(false); })
+startDb().then(() => { ready = true; markReady(); $("loadingMsg")?.remove(); setBusy(false); })
          .catch(() => { $("loadingMsg") && ($("loadingMsg").textContent = t("error")); });
