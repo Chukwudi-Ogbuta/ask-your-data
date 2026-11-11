@@ -1,0 +1,30 @@
+/* Portfolio design system: "deep forest".
+   Warm grey page, white cards, one deep-green accent. Serif for conversation, sans for interface.
+   Shared by the tool page and the whole portfolio. */
+:root {
+  --page: #F4F2ED;          /* main area */
+  --panel: #E9E6DF;         /* side panel */
+  --card: #FFFFFF;          /* answer cards, inputs */
+  --soft: #F7F5F0;          /* code blocks, insets */
+  --line: #E0DBD1;          /* hairlines */
+  --line-2: #D6D1C6;        /* panel dividers */
+  --text: #1E1E1C;          /* near-black */
+  --text-2: #4A463F;        /* supporting text */
+  --text-3: #7D776D;        /* captions, labels */
+  --accent: #1F5C45;        /* deep forest green: the one accent */
+  --accent-2: #8DB8A3;      /* chart shades */
+  --accent-3: #B9D3C6;
+  --on-accent: #F3F7F4;
+  --tick: #9FD9BD;          /* ticks on green bubbles */
+  --dot-yes: #1F5C45; --dot-no: #B5654A; --dot-info: #A39A8B;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--text); font-family: var(--sans);
+       font-size: 15px; line-height: 1.55; font-variant-numeric: tabular-nums; }
+a { color: var(--accent); text-underline-offset: 3px; }
+button { font: inherit; cursor: pointer; color: inherit; }

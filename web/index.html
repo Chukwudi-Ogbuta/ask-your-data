@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask Your Data · Chukwudi Ogbuta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* full-screen layout: side panel on the left, chat on the right */
+    .layout { display: flex; height: 100vh; height: 100dvh; }
+    aside { width: 280px; flex: none; background: var(--panel); border-right: 1px solid var(--line-2);
+            padding: 24px 22px; display: flex; flex-direction: column; overflow-y: auto; }
+    .brand { font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+    .by { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+    .by a { color: var(--text-3); }
+    .rule { height: 1px; background: var(--line-2); margin: 18px 0; border: 0; }
+    .sec { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin: 0 0 10px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13px; }
+    .fact i { width: 7px; height: 7px; border-radius: 50%; margin-top: 6px; flex: none; }
+    .fact b { display: block; font-weight: 500; }
+    .fact span { color: var(--text-2); line-height: 1.45; }
+    .topics { display: flex; flex-direction: column; gap: 2px; }
+    .topics button { text-align: left; background: none; border: 0; padding: 6px 8px; margin: 0 -8px; border-radius: 8px; font-size: 14px; color: var(--text-2); }
+    .topics button:hover { background: rgba(31, 92, 69, 0.08); color: var(--accent); }
+    .stats { display: flex; justify-content: space-between; }
+    .stats b { display: block; font-size: 18px; font-weight: 600; }
+    .stats span { font-size: 11px; color: var(--text-3); }
+    .small { font-size: 12px; color: var(--text-3); line-height: 1.5; }
+
+    .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    .bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; }
+    .bar .mobile-title { display: none; font-family: var(--serif); font-size: 18px; font-weight: 500; }
+    .bar .menu { display: none; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+    .lang { display: flex; gap: 2px; background: #EAE6DE; border-radius: 999px; padding: 2px; margin-left: auto; }
+    .lang button { border: 0; background: transparent; border-radius: 999px; padding: 4px 11px; font-size: 12px; color: var(--text-2); }
+    .lang button.on { background: var(--accent); color: var(--on-accent); }
+
+    #thread { flex: 1; min-height: 0; overflow-y: auto; }
+    .col { max-width: 760px; margin: 0 auto; padding: 8px 24px 40px; display: flex; flex-direction: column; gap: 14px; }
+    .bot { align-self: flex-start; max-width: 88%; background: var(--card); border: 1px solid #E6E2DA;
+           border-radius: 16px 16px 16px 4px; padding: 13px 16px; }
+    .bot.wide { width: 88%; }
+    .say { font-family: var(--serif); font-size: 17px; line-height: 1.55; }
+    .me { align-self: flex-end; max-width: 78%; background: var(--accent); color: var(--on-accent);
+          border-radius: 16px 16px 4px 16px; padding: 9px 13px; font-size: 15px; }
+    .me .meta { color: var(--tick); font-size: 11px; margin-left: 10px; white-space: nowrap; }
+    .typing { color: var(--text-3); font-style: italic; font-size: 14px; }
+    .hint { font-size: 13px; color: var(--text-3); margin: 12px 0 6px; }
+    .starter { display: block; width: 100%; text-align: left; background: var(--soft); border: 1px solid var(--line);
+               border-radius: 12px; padding: 9px 12px; margin-top: 6px; font-size: 14px; }
+    .starter small { display: block; font-size: 11px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
+    .starter:hover, .chip:hover { border-color: var(--accent-2); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; max-width: 92%; }
+    .chips .label { width: 100%; font-size: 13px; color: var(--text-3); }
+    .chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 13px; color: var(--text-2); }
+
+    /* the flip card: front = answer, back = the query and checks; both sides share one grid cell */
+    .flip { align-self: flex-start; width: 88%; perspective: 1400px; }
+    .flip .in { display: grid; transition: transform .6s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
+    .flip.turned .in { transform: rotateY(180deg); }
+    .face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: var(--card);
+            border: 1px solid #E6E2DA; border-radius: 16px 16px 16px 4px; padding: 13px 16px; }
+    .face.back { transform: rotateY(180deg); }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 26px; }
+    .sw { display: inline-flex; background: #F0EDE6; border-radius: 999px; padding: 2px; margin-left: auto; flex: none; }
+    .sw button { border: 0; background: transparent; border-radius: 999px; padding: 3px 11px; font-size: 12px; color: var(--text-2); }
+    .sw button.on { background: var(--accent); color: var(--on-accent); }
+    .report { font-size: 12px; color: #B3362B; text-decoration: none; font-weight: 500; background: none; border: 0; padding: 0; }
+    .rbox { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; font-size: 13px; }
+    .rbox .rq { color: var(--text-2); margin-bottom: 8px; }
+    .rbox .rq.ok { color: var(--accent); font-weight: 500; margin: 0; }
+    .rbox input { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font: inherit; font-size: 13px; background: var(--soft); color: var(--text); }
+    .rbox .rrow { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+    .rbox button { border-radius: 999px; padding: 5px 14px; font-size: 13px; border: 1px solid var(--line); background: var(--card); }
+    .rbox .rsend { background: #B3362B; border-color: #B3362B; color: #fff; }
+    .report::before { content: "⚑ "; }
+    .report:hover { text-decoration: underline; }
+    /* "See query": green text with an eye, so it stands out from "Answer" */
+    .sw button.q { display: inline-flex; align-items: center; gap: 5px; color: var(--accent); font-weight: 500; }
+    .sw button.q.on { color: var(--on-accent); }
+    .sw .eye { flex: none; }
+    .big { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-top: 4px; }
+    .cap { font-size: 12px; color: var(--text-3); margin-top: 6px; }
+    .bars { display: grid; grid-template-columns: minmax(100px, 36%) 1fr auto; gap: 8px 12px; align-items: center; font-size: 13px; margin-top: 12px; }
+    .bars .b { height: 6px; border-radius: 3px; }
+    .bars .v { text-align: right; }
+    .bars .unk { color: var(--text-3); font-style: italic; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+    th { text-align: left; font-weight: 500; color: var(--text-3); border-bottom: 1px solid var(--line); padding: 6px 4px; }
+    td { border-bottom: 1px solid var(--line); padding: 6px 4px; }
+    td.num { text-align: right; }
+    /* product answers: a clean list, not a wide table */
+    .plist { list-style: none; padding: 0; margin: 10px 0 0; }
+    .plist li { display: flex; gap: 12px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); }
+    .plist li:last-child { border-bottom: 0; }
+    .plist .n { font-size: 12px; color: var(--text-3); width: 16px; flex: none; }
+    .plist .name { font-size: 14px; }
+    .plist .pbrand { font-family: var(--sans); font-size: 12px; font-weight: 400; color: var(--text-3); }
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .tag { font-size: 11px; background: var(--soft); border: 1px solid #ECE8E0; border-radius: 999px; padding: 1px 8px; color: var(--text-2); }
+    .tag.ns { background: #E3EFE8; border-color: #CFE3D7; color: var(--accent); font-weight: 500; }
+    .note { margin-top: 12px; font-size: 13px; color: var(--text-2); border-top: 1px solid var(--line); padding-top: 10px; }
+    .guessres { margin-top: 10px; font-size: 13px; background: var(--soft); border-radius: 10px; padding: 8px 10px; }
+    pre { margin: 10px 0 0; background: var(--soft); border: 1px solid #ECE8E0; border-radius: 10px; padding: 10px 12px;
+          font-family: var(--mono); font-size: 12px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; color: #2C2A26; }
+    .checks { list-style: none; padding: 0; margin: 10px 0 0; font-size: 13px; color: var(--text-2); line-height: 1.8; }
+    .checks li::before { content: "✓ "; color: var(--accent); }
+    .checks li.redo::before { content: "↻ "; color: #8A5A0B; }
+
+    .dock { padding: 0 24px 16px; }
+    .box { max-width: 760px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+           padding: 12px 14px; box-shadow: 0 10px 26px -16px rgba(30, 30, 28, 0.35); }
+    .box input[type=text] { width: 100%; border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: var(--text); }
+    .box input::placeholder { color: #9A958C; }
+    .row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 10px; }
+    .guess { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-3); }
+    .guess input[type=text] { width: 170px; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; background: var(--card); color: var(--text); }
+    .guess input[type=text]:focus { outline: none; border-color: var(--accent-2); box-shadow: 0 0 0 3px rgba(31, 92, 69, 0.12); }
+    #go { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 999px; padding: 7px 18px; font-size: 14px; }
+    #go:disabled, .starter:disabled, .chip:disabled, .topics button:disabled { opacity: 0.55; cursor: wait; }
+    .foot { max-width: 760px; margin: 8px auto 0; text-align: center; font-size: 11px; color: var(--text-3); }
+
+    /* phones: the side panel slides in from the left when "About" is tapped */
+    @media (max-width: 860px) {
+      aside { position: fixed; inset: 0 auto 0 0; width: min(320px, 88vw); z-index: 5; transform: translateX(-100%); transition: transform .25s ease; box-shadow: 0 0 40px rgba(0,0,0,.15); }
+      aside.open { transform: none; }
+      .bar { padding: 12px 16px; gap: 10px; }
+      .bar .mobile-title, .bar .menu { display: block; }
+      .col { padding: 8px 14px 18px; }
+      .dock { padding: 0 12px 12px; }
+      .bot, .flip, .bot.wide { max-width: 100%; width: 100%; }
+      .me { max-width: 88%; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside id="side">
+    <div class="brand" data-t="title">Ask your data</div>
+    <div class="by"><span data-t="by">A project by</span> <a href="https://chukwudi-ogbuta.github.io" target="_blank" rel="noopener">Chukwudi Ogbuta</a></div>
+    <hr class="rule">
+    <p class="sec" data-t="secData">The data</p>
+    <div class="fact"><i style="background:var(--dot-yes)"></i><div><b data-t="inIt">What's in it</b><span data-t="inItText"></span></div></div>
+    <div class="fact"><i style="background:var(--dot-no)"></i><div><b data-t="notIn">What's not</b><span data-t="notInText"></span></div></div>
+    <div class="fact"><i style="background:var(--dot-info)"></i><div><b data-t="from">Source</b><span data-t="fromText"></span></div></div>
+    <hr class="rule">
+    <p class="sec" data-t="secAsk">Ask about</p>
+    <div class="topics" id="topics"></div>
+    <div style="flex:1; min-height: 18px"></div>
+    <hr class="rule">
+    <div class="stats">
+      <div><b>95.4%</b><span data-t="sAcc">right first time</span></div>
+      <div><b>1,004</b><span data-t="sTests">test questions</span></div>
+    </div>
+    <p class="small" style="margin:14px 0 0"><span data-t="foot">Data from Open Food Facts (ODbL).</span>
+      <a href="https://github.com/Chukwudi-Ogbuta/ask-your-data" target="_blank" rel="noopener" data-t="code">Cleaned data and code</a></p>
+  </aside>
+
+  <div class="main">
+    <div class="bar">
+      <button class="menu" id="menu" data-t="about">About</button>
+      <span class="mobile-title" data-t="title">Ask your data</span>
+      <div class="lang"><button data-lang="en" class="on">EN</button><button data-lang="fr">FR</button></div>
+    </div>
+    <div id="thread"><div class="col" id="col" aria-live="polite"></div></div>
+    <div class="dock">
+      <div class="box">
+        <input type="text" id="q" maxlength="300" autocomplete="off">
+        <div class="row">
+          <label class="guess"><input type="checkbox" id="guessOn"> <span data-t="guessLabel">Guess first</span>
+            <input type="text" id="guess" autocomplete="off" hidden></label>
+          <button id="go" data-t="ask">Ask</button>
+        </div>
+      </div>
+      <p class="foot" data-t="mistakes">AI can make mistakes. Flip any answer to see the query behind it.</p>
+    </div>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

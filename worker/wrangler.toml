@@ -12,4 +12,7 @@ fallthrough = true   # keep Cloudflare's default rules for other text files too
 [vars]
 # websites allowed to call this Worker (your portfolio, plus your own PC for testing)
 ALLOWED_ORIGINS = "https://chukwudi-ogbuta.github.io,http://localhost:8000"
-# the Groq key is NOT here: it is stored as a secret with  npx wrangler secret put GROQ_KEY
+# private repository where problem reports are filed as issues
+REPORT_REPO = "Chukwudi-Ogbuta/ask-your-data-reports"
+# the Groq key and the GitHub token are NOT here: they are stored as secrets with
+#   npx wrangler secret put GROQ_KEY   and   npx wrangler secret put GITHUB_TOKEN

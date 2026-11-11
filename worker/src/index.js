@@ -24,21 +24,33 @@ export default {
     if (request.method !== "POST") return reply({ error: "Send a POST request." }, 405, cors);
     if (!cors["Access-Control-Allow-Origin"]) return reply({ error: "This website is not allowed." }, 403, cors);
 
-    // 1. read and check the question
+    // 1. read and check the request
     let body;
     try { body = await request.json(); } catch { return reply({ error: "Body must be JSON." }, 400, cors); }
+
+    // problem reports go to /report and become an issue in a private GitHub repository (GitHub then emails the owner)
+    if (new URL(request.url).pathname === "/report") return fileReport(body, env, cors);
+
     const question = String(body.question || "").trim();
     if (!question) return reply({ error: "Empty question." }, 400, cors);
     if (question.length > MAX_QUESTION_LENGTH) return reply({ error: `Questions are limited to ${MAX_QUESTION_LENGTH} characters.` }, 400, cors);
 
     // the conversation sent to the AI: instructions, the question, and (second chance only) its previous try + the problem
-    const messages = [{ role: "system", content: SCHEMA }, { role: "user", content: question }];
+    // recent conversation (last 6 messages, each shortened) so the AI understands follow-up answers
+    const history = (Array.isArray(body.history) ? body.history : []).slice(-6)
+      .filter(m => (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
+      .map(m => ({ role: m.role, content: m.content.slice(0, 600) }));
+    // the visitor's chosen language: the AI must write every word for the visitor in it
+    const lang = body.lang === "fr" ? "French" : "English";
+    const langRule = { role: "system", content: `Reply language: ${lang}. Write assumptions, clarification and options in ${lang}, whatever language earlier messages used.` };
+    const messages = [{ role: "system", content: SCHEMA }, langRule, ...history, { role: "user", content: question }];
     if (body.previous && body.problem) {
       messages.push({ role: "assistant", content: JSON.stringify(body.previous).slice(0, 4000) });
       messages.push({ role: "user", content: String(body.problem).slice(0, 800) + " Correct the query. Return the same JSON format only." });
     }
 
     // 2–3. ask the models in order; move on when one is at its limit or failing
+    let shortestWait = Infinity;   // seconds until the first model frees up again
     for (const m of MODELS) {
       const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
@@ -46,7 +58,11 @@ export default {
         body: JSON.stringify({ model: m.id, temperature: 0, reasoning_effort: m.effort,
                                response_format: { type: "json_object" }, messages }),
       });
-      if (res.status === 429 || res.status >= 500) continue;   // limit reached or Groq trouble: next model
+      if (res.status === 429 || res.status >= 500) {   // limit reached or Groq trouble: next model
+        const wait = Number(res.headers.get("retry-after"));
+        if (wait > 0) shortestWait = Math.min(shortestWait, wait);
+        continue;
+      }
       if (!res.ok) return reply({ error: `AI service error (${res.status}).` }, 502, cors);
 
       const data = await res.json();
@@ -60,12 +76,34 @@ export default {
         if (verdict !== "ok") return reply({ status: "blocked", reason: verdict, model: m.id }, 200, cors);
       }
       return reply({ status: ans.status, sql, assumptions: ans.assumptions || "",
-                     clarification: ans.clarification || "", model: m.id }, 200, cors);
+                     clarification: ans.clarification || "",
+                     options: Array.isArray(ans.options) ? ans.options.slice(0, 3).map(String) : [], model: m.id }, 200, cors);
     }
     // every model is at its daily limit
-    return reply({ status: "limit", error: "Daily limit reached. Try the suggested questions, or come back tomorrow." }, 503, cors);
+    const waitMinutes = Number.isFinite(shortestWait) ? Math.max(1, Math.ceil(shortestWait / 60)) : null;
+    return reply({ status: "limit", wait_minutes: waitMinutes }, 503, cors);
   },
 };
+
+// File a visitor's problem report as a GitHub issue. Everything is cut to a safe length.
+async function fileReport(body, env, cors) {
+  const cut = (v, n) => String(v ?? "").slice(0, n);
+  const question = cut(body.question, 300);
+  if (!question) return reply({ error: "Nothing to report." }, 400, cors);
+  const text = [
+    `**Question:** ${question}`, `**Answer shown:** ${cut(body.answer, 800)}`,
+    "**Query:**", "```sql", cut(body.sql, 2000), "```",
+    `**Model:** ${cut(body.model, 60)} · **Language:** ${cut(body.lang, 5)} · **Time:** ${new Date().toISOString()}`,
+    "", `**Visitor's comment:** ${cut(body.comment, 1000) || "(none)"}`,
+  ].join("\n");
+  const res = await fetch(`https://api.github.com/repos/${env.REPORT_REPO}/issues`, {
+    method: "POST",
+    headers: { "Authorization": `Bearer ${env.GITHUB_TOKEN}`, "Accept": "application/vnd.github+json",
+               "User-Agent": "ask-your-data-worker", "Content-Type": "application/json" },
+    body: JSON.stringify({ title: "Report: " + question.slice(0, 70), body: text }),
+  });
+  return res.ok ? reply({ ok: true }, 200, cors) : reply({ error: `Could not file the report (${res.status}).` }, 502, cors);
+}
 
 // Safety check: one read-only SELECT on the products table, no file or system functions.
 // Same rules as check_sql() in eval_groq.R.
