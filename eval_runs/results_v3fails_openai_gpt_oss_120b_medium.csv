@@ -1,0 +1,4 @@
+"id","type","lang","question","expected_status","ai_status","verdict","ai_sql","ai_result","gold_result","assumptions","clarification","tokens"
+"Q005","count","en","How many cheeses are there?","ok","ok","pass","SELECT COUNT(*) AS cheese_count FROM products WHERE food_subgroup = 'Cheese';","15662","15662","Counting rows where food_subgroup equals 'Cheese'.","",1581
+"Q012","count","en","How many alcoholic drinks are there?","ok","ok","pass","SELECT COUNT(*) AS alcoholic_drinks_count FROM products WHERE food_group = 'Alcoholic beverages';","9126","9126","count rows with food_group='Alcoholic beverages'","",1643
+"Q016","filter","en","How many organic yogurts are there?","ok","ok","pass","SELECT COUNT(*) AS organic_yogurt_count FROM products WHERE is_organic = true AND food_subgroup = 'Milk and yogurt';","2180","2180","using food_subgroup='Milk and yogurt' to identify yogurts; is_organic true","",1684

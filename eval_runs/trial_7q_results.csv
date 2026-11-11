@@ -1,0 +1,14 @@
+"id","type","lang","question","expected_status","ai_status","verdict","ai_sql","ai_result","gold_result","assumptions","clarification","tokens"
+"Q002","count","en","How many organic products are there?","ok","ok","pass","SELECT COUNT(*) AS organic_count FROM products WHERE is_organic = true;","68131","68131","","",1592
+"Q016","filter","en","How many organic yogurts are there?","ok","ok","wrong number","SELECT COUNT(*) AS organic_yogurt_count FROM products WHERE is_organic = true AND (categories_list ILIKE '%yogurt%' OR food_subgroup ILIKE '%yogurt%')","2435","2180","Counting products where the pack is labelled organic and the product is identified as a yogurt via categories_list or the food_subgroup containing 'yogurt'. Empty or unknown values are excluded.","",1674
+"Q046","allergen","en","How many products contain peanuts?","ok","ok","pass","SELECT COUNT(*) AS peanut_product_count FROM products WHERE allergens ILIKE '%peanuts%';","6094","6094","Counting products whose allergens list explicitly mentions peanuts; rows with NULL allergens are excluded as unknown.","",1621
+"Q078","score","en","Which food group has the largest share of Nutri-Score E products?","ok","ok","pass","SELECT food_group,
+       COUNT(*)::DOUBLE / SUM(COUNT(*)) OVER () AS share
+FROM products
+WHERE nutriscore_grade = 'e'
+GROUP BY food_group
+ORDER BY share DESC
+LIMIT 1;","Sugary snacks | 0.4950513","Sugary snacks | 0.6622945","Only products with a known Nutri‑Score grade are considered; rows where nutriscore_grade is NULL are excluded. The share is calculated as the proportion of all Nutri‑Score E products that belong to each food_group.","",1727
+"Q113","french","fr","Quelle est la teneur moyenne en sucre des céréales du petit-déjeuner ?","ok","ok","pass","SELECT AVG(sugars_g) AS avg_sugars_g FROM products WHERE food_subgroup ILIKE '%breakfast cereals%' AND sugars_g IS NOT NULL AND NOT energy_mismatch;","16.4065550249395","16.4","Average sugar per 100 g of products whose sub‑group contains “breakfast cereals”. Null sugar values are ignored; rows with energy mismatches are excluded as required for calorie‑related queries.","",1696
+"Q139","ambiguous","en","Give me the numbers","ambiguous","ambiguous","pass","","","","","Could you specify which numbers you need? For example: 1) total number of products, 2) average calories per 100 g, or 3) count of products per brand.",1602
+"Q150","off_topic","en","What is the capital of Nigeria?","not_a_data_question","not_a_data_question","pass","","","","","",1563

@@ -1,0 +1,601 @@
+"brand","n_products","match_brand","match_products","similarity"
+"allnatura",1,"alnatura",572,0.97
+"depeyrat",1,"delpeyrat",579,0.97
+"erdanous",1,"eridanous",111,0.97
+"jd: gross",5,"jd gross",34,0.97
+"mc ennedy",1,"mcennedy",150,0.97
+"mc vities",5,"mcvities",157,0.97
+"mckennedy",3,"mcennedy",150,0.97
+"sthubert",2,"st hubert",203,0.97
+"stmichel",2,"st michel",449,0.97
+"activa",3,"activia",321,0.971
+"auchant",1,"auchan",7816,0.971
+"belbeka",1,"belbake",85,0.971
+"bellbake",2,"belbake",85,0.971
+"bio coop",1,"biocoop",802,0.971
+"bio porc",1,"bioporc",89,0.971
+"bledia",1,"bledina",735,0.971
+"borbinus",1,"bornibus",43,0.971
+"brousse verger",2,"brousse vergez",38,0.971
+"casinos",1,"casino",5450,0.971
+"cest qui le patron",2,"cest qui le patron ?!",41,0.971
+"coeur de pomme",3,"coeur de pom",54,0.971
+"creperie golas",1,"creperie colas",51,0.971
+"damian",2,"damiano",62,0.971
+"delici",1,"delicia",32,0.971
+"delicie",1,"delice",32,0.971
+"eco prix",3,"ecoprix",32,0.971
+"eisman",3,"eismann",78,0.971
+"farmers",2,"farmer",51,0.971
+"frais devant !",2,"frais devant",34,0.971
+"gechele",1,"gecchele",55,0.971
+"giffar",1,"giffard",52,0.971
+"gilber",5,"gilbert",113,0.971
+"hamlets",1,"hamlet",62,0.971
+"italiansdoitbetter",1,"italians do it better",40,0.971
+"jacob s",1,"jacobs",77,0.971
+"jean daubignac",2,"jean daudignac",125,0.971
+"jordan",1,"jordans",160,0.971
+"karela",1,"karelea",90,0.971
+"kinders",3,"kinder",446,0.971
+"kirland",1,"kirkland",85,0.971
+"la journee doree",1,"la fournee doree",169,0.971
+"lavaza",1,"lavazza",108,0.971
+"leclec",1,"leclerc",1425,0.971
+"lecler",1,"leclerc",1425,0.971
+"lehman",1,"lehmann",59,0.971
+"les doodingued",1,"les doodingues",105,0.971
+"les palissades",1,"les patissades",36,0.971
+"les rebardises",1,"les renardises",56,0.971
+"les remardises",1,"les renardises",56,0.971
+"les ronardises",1,"les renardises",56,0.971
+"liebing",1,"liebig",363,0.971
+"marible",4,"maribel",114,0.971
+"marine",1,"marinoe",51,0.971
+"marino",1,"marinoe",51,0.971
+"matine",1,"matines",61,0.971
+"maximus",2,"maxims",39,0.971
+"mccaine",1,"mccain",192,0.971
+"meiasia",1,"mei asia",43,0.971
+"men guys",1,"menguys",184,0.971
+"migross",1,"migros",818,0.971
+"monprix",1,"monoprix",3287,0.971
+"mullers",2,"muller",72,0.971
+"naturab",3,"natura",35,0.971
+"naturae",2,"natura",35,0.971
+"natural",1,"natura",35,0.971
+"naturas",3,"natura",35,0.971
+"nature addictd",1,"nature addicts",33,0.971
+"navare",1,"navarre",54,0.971
+"nestles",1,"nestle",3814,0.971
+"nisshin",1,"nissin",102,0.971
+"nutrella",1,"nutella",88,0.971
+"oceaner",1,"oceane",35,0.971
+"odysee",2,"odyssee",258,0.971
+"patak s",1,"pataks",97,0.971
+"pepites",3,"pepite",49,0.971
+"phillia",1,"philia",115,0.971
+"pomette",1,"pommette",74,0.971
+"primel",1,"primeal",581,0.971
+"pro sain",1,"prosain",223,0.971
+"probio",1,"probios",82,0.971
+"pur via",2,"pure via",63,0.971
+"reb elle",1,"rebelle",33,0.971
+"reese`s",1,"reeses",111,0.971
+"ricolas",2,"ricola",187,0.971
+"robeart",1,"robert",33,0.971
+"rougier",3,"rougie",40,0.971
+"sabaro",1,"sabarot",162,0.971
+"saveole",1,"saveol",39,0.971
+"saveurs du vecors",1,"saveurs du vercors",33,0.971
+"solveita",1,"solevita",264,0.971
+"solvita",2,"solevita",264,0.971
+"superu",5,"super u",196,0.971
+"tawain dessert",1,"taiwan dessert",33,0.971
+"tendre et plud",1,"tendre et plus",70,0.971
+"tipiack",1,"tipiak",370,0.971
+"tropic",3,"tropico",43,0.971
+"tyrells",5,"tyrrells",54,0.971
+"veggies",1,"veggie",44,0.971
+"vigeant",1,"vigean",84,0.971
+"villar",1,"villars",108,0.971
+"weiming",1,"wei ming",58,0.971
+"cpierre clot",2,"pierre clot",43,0.972
+"goldens seafood",1,"golden seafood",88,0.972
+"maison malatre",1,"maison malartre",70,0.972
+"metzger mueller",1,"metzger muller",34,0.972
+"nos plantes ont du talent",2,"nos plantes ont du talent (r)",33,0.972
+"williams saurin",1,"william saurin",206,0.972
+"bordeau chesnek",1,"bordeau chesnel",73,0.973
+"carrefour extrz",1,"carrefour extra",151,0.973
+"charles alice",5,"charles & alice",227,0.973
+"christaline",2,"cristaline",72,0.973
+"comptesse du bary",1,"comtesse du barry",183,0.973
+"deperados",1,"desperados",56,0.973
+"fortnum mason",2,"fortnum & mason",48,0.973
+"gayelord jauser",1,"gayelord hauser",105,0.973
+"jadin bio",1,"jardin bio",109,0.973
+"jardin bio etiс",1,"jardin bio etic",771,0.973
+"l epicurien",5,"lepicurien",130,0.973
+"la laiterie",2,"la laitiere",281,0.973
+"la rnaudie",1,"larnaudie",487,0.973
+"le bastitou",2,"le batistou",39,0.973
+"le bio de manin",1,"le bio de manon",101,0.973
+"legaulois",1,"le gaulois",1971,0.973
+"les 2cmarmottes",1,"les 2 marmottes",60,0.973
+"les 3 marmottes",1,"les 2 marmottes",60,0.973
+"letal du vollailler",1,"letal du volailler",530,0.973
+"marks spencer",1,"marks & spencer",1293,0.973
+"mc cormick",1,"mccormick",99,0.973
+"monde lez international",1,"mondelez international",108,0.973
+"roched blanches",1,"roches blanches",48,0.973
+"stdalfour",2,"st dalfour",42,0.973
+"tarder joes",2,"trader joes",358,0.973
+"terre a delices",1,"terre adelice",52,0.973
+"broussard",1,"brossard",207,0.974
+"capocean",2,"cap ocean",58,0.974
+"coop naturalplan",2,"coop naturaplan",152,0.974
+"delmonte",2,"del monte",82,0.974
+"donsimon",1,"don simon",98,0.974
+"lardaunie",1,"larnaudie",487,0.974
+"les sens du terrroir",1,"les sens du terroir",78,0.974
+"locmaree",1,"loc maree",36,0.974
+"monperal",1,"montperal",42,0.974
+"pro fruit",3,"profruit",42,0.974
+"purnatur",2,"pur natur",50,0.974
+"reveillon",1,"revillon",112,0.974
+"scheppes",1,"schweppes",251,0.974
+"shawoods",1,"sharwoods",35,0.974
+"tee kanne",1,"teekanne",51,0.974
+"aqui bio",3,"aquibio",51,0.975
+"baby bio",1,"babybio",225,0.975
+"babybell",1,"babybel",85,0.975
+"bienvu!",1,"bien vu!",40,0.975
+"bio gustamio",1,"bio gustiamo",43,0.975
+"bonjour campagbe",1,"bonjour campagne",79,0.975
+"cadburys",1,"cadbury",257,0.975
+"caraibo",1,"caraibos",32,0.975
+"chocoeur",2,"choceur",41,0.975
+"classic\",1,"classic",69,0.975
+"concerverie courtin",1,"conserverie courtin",43,0.975
+"delhaze",1,"delhaize",1102,0.975
+"delicat",1,"delicato",44,0.975
+"delicias",2,"delicia",32,0.975
+"ducs de gascogde",2,"ducs de gascogne",121,0.975
+"egraindorge",1,"e graindorge",55,0.975
+"elecler",2,"eleclerc",513,0.975
+"epi d\or",1,"epi dor",144,0.975
+"ever nat",1,"evernat",169,0.975
+"gavotte",2,"gavottes",94,0.975
+"gerlina",1,"gerlinea",121,0.975
+"indo mie",3,"indomie",36,0.975
+"jd goss",1,"jd gross",34,0.975
+"jimini s",3,"jiminis",35,0.975
+"le stern",1,"le ster",98,0.975
+"leclercq",2,"leclerc",1425,0.975
+"leclercs",2,"leclerc",1425,0.975
+"letal eu boucher",1,"letal du boucher",561,0.975
+"letat du boucher",2,"letal du boucher",561,0.975
+"malakof",1,"malakoff",34,0.975
+"maternes",1,"materne",541,0.975
+"mcvites",1,"mcvities",157,0.975
+"mcvitie",1,"mcvities",157,0.975
+"mymusli",1,"mymuesli",110,0.975
+"naturel",2,"naturela",47,0.975
+"natures",1,"naturnes",71,0.975
+"nawhal s",4,"nawhals",33,0.975
+"petigas",1,"petitgas",79,0.975
+"portand",2,"portland",42,0.975
+"profuit",2,"profruit",42,0.975
+"purevia",1,"pure via",63,0.975
+"saveur passion",1,"saveur & passion",54,0.975
+"saveurs & nayure",1,"saveurs & nature",106,0.975
+"saveurs fruits",2,"saveurs & fruits",39,0.975
+"saveurs nature",3,"saveurs & nature",106,0.975
+"sbd traiteur",1,"sdb traiteur",52,0.975
+"soja sun",2,"sojasun",220,0.975
+"suziwan",5,"suzi wan",109,0.975
+"twining",1,"twinings",129,0.975
+"ty gwen",2,"ty gwenn",35,0.975
+"tyrrels",1,"tyrrells",54,0.975
+"villards",1,"villars",108,0.975
+"vitalbio",1,"vitabio",116,0.975
+"zweiffel",2,"zweifel",82,0.975
+"bellevaire",2,"beillevaire",158,0.976
+"carrefour classis",1,"carrefour classic",193,0.976
+"comptoir de cacao",1,"comptoir du cacao",89,0.976
+"darco bello",1,"daco bello",306,0.976
+"gayelord hausseur",1,"gayelord hauser",105,0.976
+"la pie dui chante",1,"la pie qui chante",43,0.976
+"moulin des mondes",1,"moulin des moines",668,0.976
+"moulin des mounes",1,"moulin des moines",668,0.976
+"moulins de moines",1,"moulin des moines",668,0.976
+"nutrition sante",5,"nutrition & sante",41,0.976
+"saveur attitude",2,"saveurs attitudes",121,0.976
+"verger gourmand",1,"vergers gourmands",75,0.976
+"begin say",1,"beghin say",61,0.977
+"biosoleil",2,"bio soleil",100,0.977
+"fisherman s friend",1,"fishermans friend",43,0.977
+"fromagerie bernard",3,"fromagerie ebrard",39,0.977
+"haciendado",1,"hacendado",90,0.977
+"kripsrolls",1,"krisprolls",39,0.977
+"mixbuffet",3,"mix buffet",455,0.977
+"mon blanc",1,"mont blanc",104,0.977
+"peramande",1,"perlamande",89,0.977
+"pro natura",1,"pronatura",110,0.977
+"toutpargel",1,"toupargel",619,0.977
+"tremulini",1,"tre mulini",42,0.977
+"vanhouten",2,"van houten",40,0.977
+"altifore",1,"altiflore",53,0.978
+"assiette bleue",3,"lassiette bleue",58,0.978
+"barebell",2,"barebells",34,0.978
+"baronny s",1,"baronnys",47,0.978
+"bonduele",1,"bonduelle",510,0.978
+"bonduell",2,"bonduelle",510,0.978
+"campbell",2,"campbells",32,0.978
+"caprisun",3,"capri sun",87,0.978
+"carambars",2,"carambar",117,0.978
+"carrfour",1,"carrefour",12519,0.978
+"carte or",1,"carte dor",204,0.978
+"cocacola",5,"coca cola",556,0.978
+"cochonous",1,"cochonou",73,0.978
+"comte de la segnie",4,"comte de la seynie",36,0.978
+"cote d or",1,"cote dor",322,0.978
+"cote d\or",3,"cote dor",322,0.978
+"crousti croc",2,"crusti croc",57,0.978
+"elephants",2,"elephant",122,0.978
+"eridanus",1,"eridanous",111,0.978
+"florettes",1,"florette",250,0.978
+"francprix",1,"franprix",1786,0.978
+"freschona",1,"freshona",345,0.978
+"fruidely",1,"fruidelys",47,0.978
+"germaline",1,"germline",63,0.978
+"haldiram",4,"haldirams",41,0.978
+"hellmans",1,"hellmanns",78,0.978
+"hershey s",2,"hersheys",80,0.978
+"iphare deckmuhl",1,"phare deckmuhl",86,0.978
+"jmchatelain",1,"jm chatelain",35,0.978
+"labebyrie",1,"labeyrie",738,0.978
+"laiterie des fayes",2,"laiterie les fayes",33,0.978
+"lartigues",2,"lartigue",43,0.978
+"m clasic",1,"m classic",208,0.978
+"mainjole",1,"mainjolle",48,0.978
+"mannapin",1,"mannapain",57,0.978
+"monopprix",1,"monoprix",3287,0.978
+"morrison",1,"morrisons",107,0.978
+"moulin de valdoe",1,"moulin de valdonne",76,0.978
+"naturali",1,"naturalia",339,0.978
+"nespreso",1,"nespresso",110,0.978
+"overstim",4,"overstims",36,0.978
+"petit gas",1,"petitgas",79,0.978
+"petitgars",1,"petitgas",79,0.978
+"pleni day",2,"pleniday",37,0.978
+"prime ale",1,"primeale",125,0.978
+"primeales",1,"primeale",125,0.978
+"pronaura",1,"pronatura",110,0.978
+"qualite traiteur j",1,"qualite traiteur",67,0.978
+"scarpcooking",1,"scrapcooking",77,0.978
+"snackday",1,"snack day",140,0.978
+"starbuck",2,"starbucks",203,0.978
+"stoefler",1,"stoeffler",148,0.978
+"sveltess",1,"sveltesse",34,0.978
+"system u",2,"systeme u",37,0.978
+"teisserie",1,"teisseire",282,0.978
+"terrines de morvan",2,"terrines du morvan",42,0.978
+"toupagel",1,"toupargel",619,0.978
+"u saveur",3,"u saveurs",1046,0.978
+"valfeuri",1,"valfleuri",80,0.978
+"valfruta",1,"valfrutta",59,0.978
+"abbaye de sept fond",1,"abbaye de sept fons",58,0.979
+"bio fournil",1,"biofournil",93,0.979
+"bioorganic",3,"bio organic",38,0.979
+"bioplanete",2,"bio planete",95,0.979
+"biovillage",4,"bio village",1075,0.979
+"carrefour seleccion",2,"carrefour selection",91,0.979
+"coop qualite & priz",1,"coop qualite & prix",32,0.979
+"coop qualite prix",1,"coop qualite & prix",32,0.979
+"crepiere colas",1,"creperie colas",51,0.979
+"dacco bello",2,"daco bello",306,0.979
+"hautdecoeur",5,"haudecoeur",72,0.979
+"les comptoirs de mathilde",1,"le comptoir de mathilde",256,0.979
+"ovo maltine",3,"ovomaltine",68,0.979
+"vertfeuille",2,"verfeuille",34,0.979
+"belledone",5,"belledonne",228,0.98
+"campbell s",2,"campbells",32,0.98
+"carte d or",4,"carte dor",204,0.98
+"cerealbio",1,"cereal bio",271,0.98
+"continent",1,"continente",80,0.98
+"crowfield",1,"crownfield",187,0.98
+"delpeyerat",1,"delpeyrat",579,0.98
+"delpeyrart",1,"delpeyrat",579,0.98
+"emile noe",1,"emile noel",169,0.98
+"entre mont",1,"entremont",207,0.98
+"entremonts",1,"entremont",207,0.98
+"excelence",1,"excellence",71,0.98
+"fiorentin",1,"fiorentini",45,0.98
+"foodsping",1,"foodspring",204,0.98
+"gastrnomer",1,"gastromer",87,0.98
+"haldiram s",1,"haldirams",41,0.98
+"happyvorre",1,"happyvore",54,0.98
+"herba life",1,"herbalife",88,0.98
+"internsack",1,"intersnack",199,0.98
+"jardinbio",1,"jardin bio",109,0.98
+"l atelier blini",3,"latelier blini",96,0.98
+"le fourgo",1,"le fourgon",104,0.98
+"le gaulios",1,"le gaulois",1971,0.98
+"leerdamer",3,"leerdammer",114,0.98
+"main gourd",4,"maingourd",56,0.98
+"marcelbio",1,"marcel bio",38,0.98
+"migro bio",1,"migros bio",180,0.98
+"montblanc",1,"mont blanc",104,0.98
+"montebelo",2,"montebello",52,0.98
+"naturline",3,"naturaline",136,0.98
+"pereolive",1,"pere olive",50,0.98
+"pesca nova",1,"pescanova",100,0.98
+"planetbio",1,"planet bio",82,0.98
+"plantafin",1,"planta fin",51,0.98
+"presidente",1,"president",436,0.98
+"pur nature",2,"pur natur",50,0.98
+"sharwood s",3,"sharwoods",35,0.98
+"shneider s",1,"shneiders",57,0.98
+"tarall oro",1,"taralloro",55,0.98
+"terrasanna",1,"terrasana",67,0.98
+"tetenoire",2,"tete noire",34,0.98
+"tropica na",1,"tropicana",418,0.98
+"valpi form",5,"valpiform",36,0.98
+"valpiform´",1,"valpiform",36,0.98
+"waterdrops",1,"waterdrop",42,0.98
+"wonderfull",1,"wonderful",37,0.98
+"assiette dantoine",1,"lassiette dantoine",83,0.981
+"holly fruits",1,"holy fruits",72,0.981
+"la ferme saint ulruch",1,"la ferme saint ulrich",48,0.981
+"monprix bio",1,"monoprix bio",400,0.981
+"valee verte",1,"vallee verte",39,0.981
+"100 delights",1,"1001 delights",34,0.982
+"aldi einkauf gmbh compagnieohg",1,"aldi einkauf gmbh & compagnie ohg",36,0.982
+"baby coques",1,"baby coque",61,0.982
+"bistrovite",3,"bistro vite",37,0.982
+"bouton d or",1,"bouton dor",334,0.982
+"bouton d\or",4,"bouton dor",334,0.982
+"carte noir",4,"carte noire",132,0.982
+"cereale bio",3,"cereal bio",271,0.982
+"cristalline",1,"cristaline",72,0.982
+"crousresto",2,"crous resto",83,0.982
+"crownfields",1,"crownfield",187,0.982
+"crusticroc",1,"crusti croc",57,0.982
+"dolcegusto",1,"dolce gusto",96,0.982
+"doulce france",2,"douce france",75,0.982
+"eat natual",1,"eat natural",53,0.982
+"emile noele",1,"emile noel",169,0.982
+"festifruit",1,"festifruits",55,0.982
+"food spring",1,"foodspring",204,0.982
+"foodsprings",1,"foodspring",204,0.982
+"fritravich",1,"frit ravich",114,0.982
+"grain dorge",3,"graindorge",34,0.982
+"grand fais",1,"grand frais",408,0.982
+"grand frai",3,"grand frais",408,0.982
+"grandfrais",5,"grand frais",408,0.982
+"green shot",1,"green shoot",33,0.982
+"haagendazs",1,"haagen dazs",287,0.982
+"interarche",1,"intermarche",1269,0.982
+"intermache",5,"intermarche",1269,0.982
+"jack link s",3,"jack links",46,0.982
+"kraft food",2,"kraft foods",76,0.982
+"la baletine",1,"la baleine",45,0.982
+"la bergere",4,"la bergerie",36,0.982
+"la bioidea",1,"la bio idea",70,0.982
+"labelrouge",1,"label rouge",37,0.982
+"les borries",1,"les bories",70,0.982
+"les eleveurs de la charentonnaise",1,"les eleveurs de la charentonne",51,0.982
+"m & s foods",2,"m & s food",176,0.982
+"maitre cocq",1,"maitre coq",987,0.982
+"monter munch",1,"monster munch",39,0.982
+"moulin d or",1,"moulin dor",36,0.982
+"my proteine",2,"my protein",40,0.982
+"natur house",4,"naturhouse",45,0.982
+"naturaline8",1,"naturaline",136,0.982
+"ocean spay",1,"ocean spray",75,0.982
+"ocean sray",1,"ocean spray",75,0.982
+"oceanspray",1,"ocean spray",75,0.982
+"old elpaso",1,"old el paso",215,0.982
+"perl\amande",2,"perlamande",89,0.982
+"perleamande",1,"perlamande",89,0.982
+"petits prix",1,"petit prix",89,0.982
+"pierre cot",2,"pierre clot",43,0.982
+"reuate chocolat",1,"reaute chocolat",87,0.982
+"sacre wily",1,"sacre willy",39,0.982
+"sainsburrys",1,"sainsburys",316,0.982
+"saint agure",1,"saint agur",60,0.982
+"soda stream",1,"sodastream",112,0.982
+"sushi dayli",2,"sushi daily",58,0.982
+"tarte frais",2,"tartefrais",59,0.982
+"terra sanna",1,"terra sana",45,0.982
+"terraetica",1,"terra etica",61,0.982
+"terre et cereale bio",1,"terres et cereales bio",66,0.982
+"toutel twist",1,"tourtel twist",37,0.982
+"trader joe",4,"trader joes",358,0.982
+"albertheijn",1,"albert heijn",209,0.983
+"antiu xiona",1,"antiu xixona",34,0.983
+"antiuxixona",2,"antiu xixona",34,0.983
+"bio organica",1,"bio organic",38,0.983
+"bio organics",1,"bio organic",38,0.983
+"bistro vite!",1,"bistro vite",37,0.983
+"bon appetit!",5,"bon appetit",43,0.983
+"casa azzura",2,"casa azzurra",96,0.983
+"comme j aime",2,"comme jaime",198,0.983
+"duc de couer",1,"duc de coeur",42,0.983
+"frit ravitch",1,"frit ravich",114,0.983
+"haagene dazs",1,"haagen dazs",287,0.983
+"inter marche",5,"intermarche",1269,0.983
+"intermarcher",1,"intermarche",1269,0.983
+"isla delices",1,"isla delice",237,0.983
+"jm chatelin",1,"jm chatelain",35,0.983
+"la paletiere",2,"la pateliere",140,0.983
+"le conserve della nonne",1,"le conserve della nonna",33,0.983
+"miguel gorry",1,"miguelgorry",43,0.983
+"miles villeneuve",1,"miels villeneuve",52,0.983
+"monopix bio",5,"monoprix bio",400,0.983
+"natur\avenir",3,"naturavenir",74,0.983
+"old el passo",1,"old el paso",215,0.983
+"riches monts",1,"richesmonts",73,0.983
+"romonnature",1,"romon nature",40,0.983
+"saint albry",1,"saint albray",37,0.983
+"saladinette",2,"saladinettes",65,0.983
+"sans benedetto",2,"san benedetto",85,0.983
+"sans detours",1,"sans detour",36,0.983
+"sans marques",1,"sans marque",1716,0.983
+"sans marque¨",1,"sans marque",1716,0.983
+"sans mazrque",1,"sans marque",1716,0.983
+"thaikitchen",1,"thai kitchen",35,0.983
+"boulangerie de l hermitag",1,"boulangerie de lhermitage",178,0.984
+"gaylord hauser",1,"gayelord hauser",105,0.984
+"alain millat",2,"alain milliat",99,0.985
+"albert menesi",1,"albert menes",355,0.985
+"armor delice",1,"armor delices",35,0.985
+"bedos et savino",1,"bedros et savino",69,0.985
+"cucina noble",1,"cucina nobile",38,0.985
+"ethnosciences",1,"ethnoscience",86,0.985
+"ethnosciensce",1,"ethnoscience",86,0.985
+"ets shoepfer",2,"ets schoepfer",45,0.985
+"ferme collect",1,"ferme collet",65,0.985
+"fleur michon",1,"fleury michon",1541,0.985
+"goldenbridge",2,"golden bridge",71,0.985
+"jack daniel s",2,"jack daniels",73,0.985
+"jack daniel´s",1,"jack daniels",73,0.985
+"la tisanniere",1,"la tisaniere",58,0.985
+"lait plaisir",2,"lait plaisirs",55,0.985
+"leadder price",3,"leader price",4335,0.985
+"leaders price",1,"leader price",4335,0.985
+"les creation",1,"les creations",160,0.985
+"maison lazrul",1,"maison larzul",39,0.985
+"paysans d ici",1,"paysans dici",70,0.985
+"saveurs dauge",2,"saveur dauge",52,0.985
+"terra delysa",1,"terra delyssa",40,0.985
+"vandemortele",2,"vandemoortele",37,0.985
+"c\est qui le patron ?!",1,"cest qui le patron ?!",41,0.986
+"chene d argent",5,"chene dargent",127,0.986
+"damman freres",1,"dammann freres",61,0.986
+"ferme d anchin",1,"ferme danchin",35,0.986
+"france delice",1,"france delices",51,0.986
+"jean larnaude",1,"jean larnaudie",52,0.986
+"l route des comptoirs",1,"la route des comptoirs",43,0.986
+"la boulangerie",1,"la boulangere",198,0.986
+"les reardises",1,"les renardises",56,0.986
+"louis auvergn",1,"louis auvergne",36,0.986
+"maitre jaques",1,"maitre jacques",162,0.986
+"marques repere",1,"marque repere",6505,0.986
+"martin pourret",1,"martin pouret",81,0.986
+"michel cluzel",1,"michel cluizel",50,0.986
+"montagne noir",2,"montagne noire",90,0.986
+"nature addict",2,"nature addicts",33,0.986
+"pays gourmands",1,"pays gourmand",165,0.986
+"phare deckmulh",1,"phare deckmuhl",86,0.986
+"pierre chanaux",1,"pierre chanau",33,0.986
+"pierre chaneau",1,"pierre chanau",33,0.986
+"roche fontaine",2,"rochefontaine",70,0.986
+"san pellgrino",1,"san pellegrino",178,0.986
+"terra douceur",1,"terra douceurs",45,0.986
+"toque du chefa",1,"toque du chef",415,0.986
+"vandemoortelen",1,"vandemoortele",37,0.986
+"william surin",1,"william saurin",206,0.986
+"aline & oliver",1,"aline & olivier",58,0.987
+"andre guepartte",1,"andre guepratte",57,0.987
+"brousse verguez",1,"brousse vergez",38,0.987
+"comptesse du barry",1,"comtesse du barry",183,0.987
+"festein d alsace",1,"festein dalsace",34,0.987
+"grains de frais",1,"grain de frais",97,0.987
+"jean d audignac",2,"jean daudignac",125,0.987
+"la belle illoise",3,"la belle iloise",352,0.987
+"lassiete bleue",1,"lassiette bleue",58,0.987
+"le bio pou tous",1,"le bio pour tous",131,0.987
+"le biot de manon",1,"le bio de manon",101,0.987
+"le prix gagnan",1,"le prix gagnant",78,0.987
+"les 2 marmotte",1,"les 2 marmottes",60,0.987
+"les legendaire",1,"les legendaires",48,0.987
+"maison guinget",1,"maison guinguet",67,0.987
+"maitre punille",1,"maitre prunille",240,0.987
+"miel villeneuve",1,"miels villeneuve",52,0.987
+"naturcompagnie",1,"natur compagnie",55,0.987
+"nature compagnie",1,"natur compagnie",55,0.987
+"nous antigaspi",1,"nous anti gaspi",116,0.987
+"phare d eckmuhl",2,"phare deckmuhl",86,0.987
+"pierre laguihon",1,"pierre laguilhon",36,0.987
+"produits blanc",2,"produits blancs",146,0.987
+"reaute chocolats",1,"reaute chocolat",87,0.987
+"saveur & fruits",2,"saveurs & fruits",39,0.987
+"saveur & nature",3,"saveurs & nature",106,0.987
+"terre de l alpe",2,"terre de lalpe",88,0.987
+"terre de lalpes",5,"terre de lalpe",88,0.987
+"terres de lalpe",2,"terre de lalpe",88,0.987
+"thomas brioches",3,"thomas brioche",69,0.987
+"weight watcher",2,"weight watchers",179,0.987
+"yann de bretage",1,"yann de bretagne",44,0.987
+"astruc patiserie",1,"astruc patisserie",60,0.988
+"bedros et savinos",1,"bedros et savino",69,0.988
+"bicuiterie de provence",1,"biscuiterie de provence",35,0.988
+"chef select togo",1,"chef select to go",45,0.988
+"huileries richard",2,"huilerie richard",54,0.988
+"jules destroopers",1,"jules destrooper",51,0.988
+"letal du bouchcer",1,"letal du boucher",561,0.988
+"miel l apiculteur",1,"miel lapiculteur",33,0.988
+"moulin des moins",2,"moulin des moines",668,0.988
+"natures de france",1,"nature de france",86,0.988
+"president choice",1,"presidents choice",38,0.988
+"reflet de france",5,"reflets de france",527,0.988
+"saveurs attitude",3,"saveurs attitudes",121,0.988
+"vergers gourmand",1,"vergers gourmands",75,0.988
+"campagnes de france",1,"campagne de france",115,0.989
+"confi de provence",1,"confit de provence",74,0.989
+"conserverie coutin",1,"conserverie courtin",43,0.989
+"delaiunay leveille",1,"delaunay leveille",43,0.989
+"famille perroneau",4,"famille perronneau",65,0.989
+"finesse des verges",1,"finesse des vergers",41,0.989
+"goumet finest cuisine",2,"gourmet finest cuisine",82,0.989
+"gourmet de lartois",1,"gourmets de lartois",47,0.989
+"histoire de glaces",1,"histoires de glaces",81,0.989
+"la cuisine d oceane",3,"la cuisine doceane",81,0.989
+"la perle de dieux",3,"la perle des dieux",137,0.989
+"le petit cuisiner",1,"le petit cuisinier",47,0.989
+"les deux gourmandes",2,"les deux gourmands",41,0.989
+"les mouette darvor",1,"les mouettes darvor",102,0.989
+"les p´tits amoureux",1,"les ptits amoureux",36,0.989
+"letale du volailler",2,"letal du volailler",530,0.989
+"maitre jeanpierre",1,"maitre jean pierre",140,0.989
+"mulot & petit jean",1,"mulot & petitjean",103,0.989
+"patrimoine goumand",1,"patrimoine gourmand",185,0.989
+"saveur du vercors",1,"saveurs du vercors",33,0.989
+"saveurs d ailleurs",1,"saveurs dailleurs",85,0.989
+"terre et cereales",1,"terres et cereales",44,0.989
+"abbaye de sept fonds",1,"abbaye de sept fons",58,0.99
+"cest qui le patron !?",3,"cest qui le patron ?!",41,0.99
+"creperie de guerdelan",1,"creperie de guerledan",33,0.99
+"gourmets de l artois",4,"gourmets de lartois",47,0.99
+"huilerie beaujolais",1,"huilerie beaujolaise",41,0.99
+"italian do it better",2,"italians do it better",40,0.99
+"la compagnie arctique",2,"la compagnie artique",46,0.99
+"la turbine a saveur",1,"la turbine a saveurs",65,0.99
+"lapero du poissonier",1,"lapero du poissonnier",75,0.99
+"les fermier de loue",1,"les fermiers de loue",88,0.99
+"les saveur du clavon",1,"les saveurs du clavon",155,0.99
+"les vergers d escoute",3,"les vergers descoute",81,0.99
+"lidl stiftung & cokg",1,"lidl stiftung & co kg",59,0.99
+"raynal et roquelaure$",1,"raynal et roquelaure",110,0.99
+"truffkettes de france",1,"truffettes de france",36,0.99
+"chocolaterie castelin",1,"chocolaterie castelain",61,0.991
+"cmi carrefour marchandises internationales",1,"cmi (carrefour marchandises internationales)",118,0.991
+"la maison des bistrot",1,"la maison des bistrots",41,0.991
+"la pointe de penmarc h",4,"la pointe de penmarch",81,0.991
+"la pointe de penmmarch",1,"la pointe de penmarch",81,0.991
+"la route des compoirs",1,"la route des comptoirs",43,0.991
+"la route des comptoires",1,"la route des comptoirs",43,0.991
+"le manoir des abeillles",1,"le manoir des abeilles",98,0.991
+"les comtes de provences",1,"les comtes de provence",190,0.991
+"planteur des tropique",1,"planteur des tropiques",59,0.991
+"terre et cereales bio",2,"terres et cereales bio",66,0.991
+"cochonailles du haut bois",4,"cochonnailles du haut bois",36,0.992
+"la cave augustin florent",2,"la cave daugustin florent",58,0.992
+"la cuisine du poisonnier",2,"la cuisine du poissonnier",88,0.992
+"la cuisine du poissonier",1,"la cuisine du poissonnier",88,0.992
+"le comptoirs de mathilde",1,"le comptoir de mathilde",256,0.992
+"nos region ont du talent",2,"nos regions ont du talent",624,0.992
+"la fabrica della pasta di gragnano",1,"la fabbrica della pasta di gragnano",44,0.994

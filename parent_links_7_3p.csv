@@ -1,0 +1,242 @@
+"child","parent","shared","child_products","parent_products","parent_partners","child_partners","share"
+"montorsi","aia",23,58,117,3,2,0.4
+"gourmet finest cuisine","aldi",68,84,1377,45,1,0.81
+"daylicious","aldi",29,41,1377,45,1,0.71
+"mucci","aldi",28,94,1377,45,1,0.3
+"famille perronneau","apidis",29,69,153,4,1,0.42
+"pouce","auchan",289,689,8218,21,1,0.42
+"terroir","auchan",207,209,8218,21,3,0.99
+"sante","auchan",90,122,8218,21,2,0.74
+"tavola in italia","auchan",88,88,8218,21,2,1
+"mmm!","auchan",76,86,8218,21,3,0.88
+"loiseau","auchan",70,80,8218,21,1,0.88
+"mmm !","auchan",42,47,8218,21,2,0.89
+"rik & rok","auchan",35,48,8218,21,1,0.73
+"veggie","auchan",31,45,8218,21,2,0.69
+"better life","auchan",21,21,8218,21,1,1
+"mulino bianco","barilla",70,163,368,2,1,0.43
+"fbf","bauli",25,25,94,4,3,1
+"casalini","bauli",23,24,94,4,3,0.96
+"boursin","bel",31,115,179,8,1,0.27
+"le reflexe bio","belle france",60,60,1998,2,1,1
+"francap distribution","belle france",35,37,1998,2,1,0.95
+"plaisir brut","benenuts",21,21,159,6,1,1
+"3ds bugles","benenuts",20,23,159,6,2,0.87
+"ensemble","biocoop",65,86,805,2,1,0.76
+"les recoltes bio","bledina",99,99,740,17,2,1
+"bledichef","bledina",77,78,740,17,2,0.99
+"les idees de maman","bledina",43,43,740,17,2,1
+"bledilait","bledina",38,40,740,17,2,0.95
+"blediner","bledina",36,36,740,17,2,1
+"offre sucree","bledina",30,30,740,17,1,1
+"bledine","bledina",24,26,740,17,2,0.92
+"coupelles fruits","bledina",22,22,740,17,1,1
+"bledidej","bledina",21,21,740,17,1,1
+"four a pierre","buitoni",24,24,190,6,1,1
+"fraichup","buitoni",21,21,190,6,1,1
+"reflets de france","carrefour",377,532,13437,23,1,0.71
+"en cuisine","carrefour",258,348,13437,23,3,0.74
+"simpl","carrefour",254,351,13437,23,3,0.72
+"produits blancs","carrefour",99,148,13437,23,2,0.67
+"saxo","carrefour",61,123,13437,23,2,0.5
+"esprit de fete","carrefour",59,63,13437,23,1,0.94
+"promocash","carrefour",49,82,13437,23,3,0.6
+"interdis","carrefour",42,50,13437,23,2,0.84
+"bon app","carrefour",35,57,13437,23,1,0.61
+"selection","carrefour",31,116,13437,23,2,0.27
+"les belges","carrefour",20,37,13437,23,1,0.54
+"lavazza","carte noire",42,107,135,3,1,0.39
+"delices","casino",88,98,5984,16,1,0.9
+"saveurs dailleurs","casino",70,86,5984,16,1,0.81
+"doodingues","casino",50,133,5984,16,1,0.38
+"les tilapins","casino",23,24,5984,16,2,0.96
+"coeur de lion","cf & r",25,52,95,4,2,0.48
+"le rustique","cf & r",25,37,95,4,2,0.68
+"valfrutta","conserve italia",48,60,130,4,1,0.8
+"cirio","conserve italia",42,79,130,4,2,0.53
+"yoga","conserve italia",20,23,130,4,1,0.87
+"naturaplan","coop",110,296,1013,10,3,0.37
+"qualite & prix","coop",68,98,1013,10,1,0.69
+"karma","coop",54,142,1013,10,3,0.38
+"betty bossi","coop",53,129,1013,10,3,0.41
+"nature bio","cora",57,224,2862,4,2,0.25
+"activia","danone",209,325,1715,31,1,0.64
+"danette","danone",158,204,1715,31,1,0.77
+"actimel","danone",68,86,1715,31,1,0.79
+"taillefine","danone",62,70,1715,31,1,0.89
+"light & free","danone",42,50,1715,31,1,0.84
+"danonino","danone",24,34,1715,31,1,0.71
+"danio","danone",23,24,1715,31,1,0.96
+"gervais","danone",23,43,1715,31,1,0.53
+"bloc cvba","delhaize",25,25,1200,7,2,1
+"ancel","dr oetker",49,109,397,4,2,0.45
+"cameo","dr oetker",32,39,397,4,1,0.82
+"agrial","eurial",52,59,79,8,5,0.88
+"tre mulini","eurospin",35,43,185,6,1,0.81
+"dolciando","eurospin",29,33,185,6,1,0.88
+"kinder","ferrero",230,460,755,10,2,0.5
+"tic tac","ferrero",91,151,755,10,1,0.6
+"delacre","ferrero",90,184,755,10,2,0.49
+"nutella","ferrero",59,96,755,10,1,0.61
+"delichoc","ferrero",23,32,755,10,2,0.72
+"le conserve della nonna","fini",33,33,196,2,1,1
+"yomo","granarolo",23,25,113,2,1,0.92
+"le bon paris","herta",95,98,825,10,2,0.97
+"knacki","herta",64,64,825,10,2,1
+"tendre noix","herta",38,39,825,10,2,0.97
+"tendre croc","herta",22,22,825,10,1,1
+"chabrior","intermarche",121,480,1396,35,5,0.25
+"fiorini","intermarche",49,160,1396,35,4,0.31
+"la campaniere","intermarche",31,63,1396,35,1,0.49
+"itineraire de nos regions","itineraire des saveurs",63,170,408,4,3,0.37
+"special k","kelloggs",31,44,752,7,1,0.7
+"tresor","kelloggs",26,28,752,7,1,0.93
+"garnier","l oreal",30,45,72,4,3,0.67
+"etoile du vercors","lactalis",26,53,237,14,1,0.49
+"karelea","lea nature",71,91,740,8,1,0.78
+"jardin biologique","lea nature",55,110,740,8,2,0.5
+"biosens","lea nature",33,68,740,8,1,0.49
+"selection de nos regions","leader price",22,25,4382,7,1,0.88
+"bio village","leclerc",806,1086,8505,106,2,0.74
+"delisse","leclerc",431,483,8505,106,2,0.89
+"rustica","leclerc",291,326,8505,106,1,0.89
+"nos regions ont du talent","leclerc",283,626,8505,106,3,0.45
+"notre jardin","leclerc",283,336,8505,106,2,0.84
+"ptit deli","leclerc",271,294,8505,106,1,0.92
+"cote table","leclerc",261,273,8505,106,2,0.96
+"les croises","leclerc",244,281,8505,106,2,0.87
+"turini","leclerc",195,221,8505,106,2,0.88
+"tradilege","leclerc",190,237,8505,106,2,0.8
+"peche ocean","leclerc",185,211,8505,106,3,0.88
+"jafaden","leclerc",178,196,8505,106,1,0.91
+"ferial","leclerc",171,210,8505,106,2,0.81
+"tokapi","leclerc",171,190,8505,106,1,0.9
+"douceur du verger","leclerc",143,166,8505,106,2,0.86
+"epi dor","leclerc",123,145,8505,106,1,0.85
+"ronde des mers","leclerc",116,125,8505,106,2,0.93
+"scamark","leclerc",116,139,8505,106,11,0.83
+"cote snack","leclerc",105,113,8505,106,1,0.93
+"nat & vie","leclerc",90,100,8505,106,2,0.9
+"tables du monde","leclerc",89,109,8505,106,2,0.82
+"saint azay","leclerc",86,98,8505,106,1,0.88
+"tablier blanc","leclerc",78,91,8505,106,1,0.86
+"plantation","leclerc",71,87,8505,106,1,0.82
+"eskiss","leclerc",61,68,8505,106,2,0.9
+"volandry","leclerc",61,76,8505,106,1,0.8
+"pomlisse","leclerc",59,64,8505,106,2,0.92
+"smicy","leclerc",56,58,8505,106,2,0.97
+"picexpress","leclerc",54,54,8505,106,3,1
+"brin de jour","leclerc",53,53,8505,106,1,1
+"equador","leclerc",53,74,8505,106,2,0.72
+"tablette dor","leclerc",51,56,8505,106,2,0.91
+"copains copines","leclerc",46,48,8505,106,1,0.96
+"trium","leclerc",45,52,8505,106,2,0.87
+"chaque jour sans gluten","leclerc",44,50,8505,106,1,0.88
+"menu fraicheur","leclerc",43,50,8505,106,2,0.86
+"mots denfants","leclerc",43,44,8505,106,1,0.98
+"couleurs vives","leclerc",42,46,8505,106,1,0.91
+"frucci","leclerc",42,42,8505,106,1,1
+"comptoir du grain","leclerc",40,52,8505,106,1,0.77
+"regal soupe","leclerc",39,43,8505,106,1,0.91
+"vieux carion","leclerc",34,34,8505,106,1,1
+"grainea","leclerc",31,34,8505,106,2,0.91
+"trofic","leclerc",31,31,8505,106,4,1
+"pic express","leclerc",30,30,8505,106,1,1
+"panier du primeur","leclerc",29,36,8505,106,1,0.81
+"chantet blanet","leclerc",28,28,8505,106,1,1
+"rives et terrasses","leclerc",26,26,8505,106,1,1
+"sprinks","leclerc",26,26,8505,106,1,1
+"terrasses dautan","leclerc",26,28,8505,106,1,0.93
+"fruistar","leclerc",24,25,8505,106,2,0.96
+"les caracteres","leclerc",24,24,8505,106,1,1
+"jeans","leclerc",23,23,8505,106,1,1
+"mamie douceur","leclerc",23,24,8505,106,1,0.96
+"volandrie","leclerc",22,72,8505,106,1,0.31
+"saint charmin","leclerc",21,33,8505,106,1,0.64
+"cote croc","leclerc",20,22,8505,106,2,0.91
+"festalie","leclerc",20,21,8505,106,1,0.95
+"oeufs de nos regions","leclerc",20,23,8505,106,1,0.87
+"selection des mousquetaires","les mousquetaires",58,74,187,12,7,0.78
+"deluxe","lidl",175,687,3726,76,2,0.25
+"sondey","lidl",134,433,3726,76,3,0.31
+"favorina","lidl",83,251,3726,76,3,0.33
+"crownfield","lidl",52,189,3726,76,2,0.28
+"chene dargent","lidl",34,132,3726,76,3,0.26
+"trattoria alfredo","lidl",25,66,3726,76,1,0.38
+"select & go","lidl",23,60,3726,76,1,0.38
+"lindor","lindt",45,48,971,2,1,0.94
+"caffarel","lindt",24,31,971,2,1,0.77
+"belvita","lu",29,117,668,12,2,0.25
+"prince","lu",20,33,668,12,1,0.61
+"mousline","maggi",48,70,668,8,2,0.69
+"saveur a lancienne","maggi",25,25,668,8,2,1
+"snickers","mars",28,105,346,7,1,0.27
+"pompotes","materne",104,196,545,11,9,0.53
+"sans sucres ajoutes","materne",71,92,545,11,2,0.77
+"pom potes","materne",22,35,545,11,2,0.63
+"m classic","migros",63,207,1009,19,2,0.3
+"m budget","migros",30,84,1009,19,1,0.36
+"annas best","migros",27,68,1009,19,1,0.4
+"elsa","migros",20,31,1009,19,1,0.65
+"claude leger","monique ranou",34,58,595,5,4,0.59
+"creme dessert","mont blanc",43,46,102,3,1,0.93
+"veronesi","negroni",53,67,88,3,2,0.79
+"dolce gusto","nescafe",91,111,440,7,3,0.82
+"farmers origins","nescafe",23,23,440,7,1,1
+"la laitiere","nestle",216,283,3965,75,2,0.76
+"san pellegrino","nestle",152,179,3965,75,4,0.85
+"les recettes de latelier","nestle",125,128,3965,75,1,0.98
+"nesquik","nestle",94,117,3965,75,1,0.8
+"kitkat","nestle",86,107,3965,75,2,0.8
+"naturnes","nestle",78,78,3965,75,1,1
+"kit kat","nestle",58,71,3965,75,2,0.82
+"smarties","nestle",48,81,3965,75,1,0.59
+"chocapic","nestle",47,52,3965,75,1,0.9
+"lion","nestle",47,55,3965,75,1,0.85
+"lanvin","nestle",44,88,3965,75,2,0.5
+"guigoz","nestle",42,68,3965,75,1,0.62
+"perugina","nestle",40,46,3965,75,1,0.87
+"crunch","nestle",38,39,3965,75,1,0.97
+"extreme","nestle",38,45,3965,75,1,0.84
+"thomy","nestle",36,89,3965,75,1,0.4
+"after eight","nestle",34,43,3965,75,1,0.79
+"ptit brasse","nestle",31,31,3965,75,1,1
+"fitness","nestle",29,39,3965,75,1,0.74
+"tablettes","nestle",28,28,3965,75,1,1
+"sveltesse","nestle",27,34,3965,75,1,0.79
+"froneri","nestle",26,52,3965,75,3,0.5
+"cailler","nestle",25,76,3965,75,1,0.33
+"ricore","nestle",22,24,3965,75,1,0.92
+"garden gourmet","nestle",21,85,3965,75,3,0.25
+"docello","nestle",20,20,3965,75,1,1
+"oasis tropical","oasis",24,26,163,3,1,0.92
+"ebro foods","panzani",26,31,693,2,1,0.84
+"cuisine evasion","picard",22,30,3339,2,1,0.73
+"elle & vire","savencia",176,277,1007,47,3,0.64
+"st moret","savencia",84,104,1007,47,2,0.81
+"tartare","savencia",83,95,1007,47,2,0.87
+"cf & r","savencia",66,95,1007,47,4,0.69
+"saint agur","savencia",47,61,1007,47,1,0.77
+"fromarsac","savencia",44,52,1007,47,3,0.85
+"caprice des dieux","savencia",40,46,1007,47,1,0.87
+"fol epi","savencia",38,45,1007,47,2,0.84
+"richesmonts","savencia",37,76,1007,47,2,0.49
+"coraya","savencia",30,99,1007,47,2,0.3
+"chavroux","savencia",28,40,1007,47,1,0.7
+"fromageries perreault","savencia",28,30,1007,47,2,0.93
+"milkana","savencia",28,30,1007,47,1,0.93
+"saint albray","savencia",25,39,1007,47,2,0.64
+"aperivrais","savencia",23,23,1007,47,1,1
+"bresse bleu","savencia",22,27,1007,47,1,0.81
+"ptit louis","savencia",20,21,1007,47,1,0.95
+"la chareyrade","soppreg",27,48,55,2,1,0.56
+"mcilhenny company","tabasco",26,26,47,2,1,1
+"signal","unilever",37,37,781,24,2,1
+"dove","unilever",35,39,781,24,1,0.9
+"miko","unilever",35,90,781,24,4,0.39
+"curly","vico",26,27,410,7,2,0.96
+"ww","weight watchers",43,57,181,2,1,0.75
+"perle de lait","yoplait",102,107,1137,19,1,0.95
+"yop","yoplait",73,82,1137,19,1,0.89
+"classique","yoplait",47,75,1137,19,3,0.63
+"panier 0%","yoplait",24,24,1137,19,1,1

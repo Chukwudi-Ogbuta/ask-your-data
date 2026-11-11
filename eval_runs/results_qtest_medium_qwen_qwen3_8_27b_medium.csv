@@ -1,0 +1,2 @@
+"id","type","lang","question","expected_status","ai_status","verdict","ai_sql","ai_result","gold_result","assumptions","clarification","second_chance","tokens"
+"Q005","count","en","How many cheeses are there?","ok","ok","pass","SELECT COUNT(*) FROM products WHERE food_subgroup = 'Cheese'","15662","15662","Cheese identified by food_subgroup = 'Cheese', which is the dedicated subgroup for cheese products.","",FALSE,1586

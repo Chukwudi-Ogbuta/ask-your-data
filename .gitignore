@@ -1,0 +1,22 @@
+# Files git must never upload to GitHub
+
+# secret: the Groq API key
+groq_key.txt
+
+# raw Open Food Facts download (1.5 GB, too big and re-downloadable)
+*.csv.gz
+
+# local database files (big, rebuilt by the R script)
+*.duckdb
+*.duckdb.wal
+
+# intermediate data exports (big; the final products.parquet is published separately)
+fr_clean.parquet
+fr_clean_final.parquet
+
+# R and system clutter
+.Rhistory
+.RData
+.Rproj.user/
+Thumbs.db
+desktop.ini
