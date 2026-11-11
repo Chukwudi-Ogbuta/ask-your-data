@@ -18,14 +18,15 @@ const $ = (id) => document.getElementById(id);
 const T = {
   en: {
     noRows: "No products match that.", allergyNote: "⚠ For allergies, always check the label on the pack. This data comes from volunteers and can be incomplete.",
-    title: "Ask your data", by: "A project by", secData: "The data", secAsk: "Ask about", about: "About",
+    title: "Ask your data", by: "A project by", tagline: "Turns plain-language questions into SQL", headline: "Turn plain-language questions into SQL",
+    secHow: "How it works", how1: "You ask in plain English or French.", how2: "The AI writes an SQL query, and it is checked three ways.", how3: "It runs on the data in your browser. Tap See query on any answer to check it matches your question.", secData: "The data", secAsk: "Ask about", about: "About",
     inIt: "What's in it", inItText: "400,062 packaged foods sold in France, from their labels: brand, food type, Nutri-Score, processing, allergens, nutrients, and claims like organic or vegan.",
     notIn: "What's not", notInText: "Prices, sales, stores, stock, expiry dates or reviews.",
     from: "Source", fromText: "Open Food Facts, a free database built by volunteers. Cleaned and checked by me; some details can still be missing.",
     sAcc: "right first time", sTests: "test questions", foot: "Data from Open Food Facts (ODbL).", code: "Cleaned data and code",
     ask: "Ask", guessLabel: "Guess first", placeholder: "Ask a question about French food…",
     mistakes: "AI can make mistakes. Flip any answer to see the query behind it.",
-    hello: "Hi. I know 400,062 packaged foods sold in France. Ask me anything about them, in English or French.",
+    hello: "Hi. Ask me anything about 400,062 packaged foods sold in France, in plain English or French. I translate your question into an SQL query, check it and run it. Tap See query on any answer to compare the query with what you asked.",
     tryThese: "Try one of these:", alsoAsk: "You could also ask:", topicIntro: "Here are some questions about {x}:",
     loading: "Loading the products into your browser…", thinking: "Writing the query…", running: "Running it on the data…", retry: "Fixing the query…",
     report: "Report a problem", reportAsk: "Send this answer for review? The question, answer and query are attached.", reportPh: "Anything to add? (optional)", reportSend: "Send report", reportCancel: "Cancel", reportThanks: "Thanks, report sent ✓", reportFail: "Couldn't send the report. Please try again.",
@@ -44,14 +45,15 @@ const T = {
   },
   fr: {
     noRows: "Aucun produit ne correspond.", allergyNote: "⚠ En cas d'allergie, vérifiez toujours l'étiquette sur l'emballage. Ces données viennent de bénévoles et peuvent être incomplètes.",
-    title: "Interrogez les données", by: "Un projet de", secData: "Les données", secAsk: "Thèmes", about: "À propos",
+    title: "Interrogez les données", by: "Un projet de", tagline: "Transforme vos questions en requêtes SQL", headline: "Transformez vos questions en requêtes SQL",
+    secHow: "Comment ça marche", how1: "Vous posez votre question en français ou en anglais.", how2: "L'IA écrit une requête SQL, vérifiée de trois façons.", how3: "Elle s'exécute sur les données dans votre navigateur. Touchez Voir la requête pour vérifier qu'elle correspond à votre question.", secData: "Les données", secAsk: "Thèmes", about: "À propos",
     inIt: "Ce qu'elles contiennent", inItText: "400 062 produits emballés vendus en France, d'après leurs étiquettes : marque, type d'aliment, Nutri-Score, transformation, allergènes, nutriments et mentions comme bio ou végan.",
     notIn: "Ce qu'elles ne contiennent pas", notInText: "Prix, ventes, magasins, stocks, dates de péremption ou avis.",
     from: "Source", fromText: "Open Food Facts, une base gratuite construite par des bénévoles. Nettoyée et vérifiée par moi ; certains détails peuvent manquer.",
     sAcc: "justes au premier essai", sTests: "questions de test", foot: "Données Open Food Facts (ODbL).", code: "Données nettoyées et code",
     ask: "Demander", guessLabel: "Deviner d'abord", placeholder: "Posez une question sur l'alimentation en France…",
     mistakes: "L'IA peut se tromper. Retournez une réponse pour voir la requête derrière.",
-    hello: "Bonjour. Je connais 400 062 produits emballés vendus en France. Posez-moi n'importe quelle question, en français ou en anglais.",
+    hello: "Bonjour. Posez-moi n'importe quelle question sur 400 062 produits emballés vendus en France, en français ou en anglais. Je traduis votre question en requête SQL, je la vérifie puis je l'exécute. Touchez Voir la requête sur une réponse pour la comparer à votre question.",
     tryThese: "Essayez par exemple :", alsoAsk: "Vous pourriez aussi demander :", topicIntro: "Quelques questions sur le thème {x} :",
     loading: "Chargement des produits dans votre navigateur…", thinking: "Écriture de la requête…", running: "Exécution sur les données…", retry: "Correction de la requête…",
     report: "Signaler un problème", reportAsk: "Envoyer cette réponse pour vérification ? La question, la réponse et la requête sont jointes.", reportPh: "Un commentaire ? (facultatif)", reportSend: "Envoyer", reportCancel: "Annuler", reportThanks: "Merci, signalement envoyé ✓", reportFail: "Le signalement n'a pas pu être envoyé. Réessayez.",
@@ -470,12 +472,16 @@ function answer(r, info) {
     front += `<div class="say">${esc(name ?? t("unknown"))}</div><div class="big">${fmtCol(V, data[0][V])}</div><div class="cap">${esc(pretty(V))}</div>`;
   } else if (tc.length === 1 && nc.length >= 1 && sorted.length <= 15) {
     // ranked list: a sentence first, then bars
-    const L = tc[0], V = nc[nc.length - 1], top = sorted.filter(x => !isUnknown(x));
+    const L = tc[0], V = nc[nc.length - 1];
+    const ordered = /year|annee|année|nova|grade/i.test(L);   // years, NOVA groups and grades keep their natural order
+    const lowFirst = /nutriscore_score|score_nutri|points/i.test(V);
+    if (!ordered) sorted.sort((a, b) => isUnknown(a) - isUnknown(b) || (lowFirst ? (a[V] ?? Infinity) - (b[V] ?? Infinity) : (b[V] ?? -Infinity) - (a[V] ?? -Infinity)));
+    const top = sorted.filter(x => !isUnknown(x));
     const show = (v) => displayLabel(L, v);
     // is this a ranking (biggest first), or something in its own order, like years or grades?
     const lowerBetter = /nutriscore_score|score_nutri|points/i.test(V);
     const vals = top.map(x => x[V] ?? -Infinity);
-    const ranked = vals.every((v, i) => i === 0 || v <= vals[i - 1]);
+    const ranked = !ordered;   // named lists are now sorted by their value
     const maxRow = top.reduce((m, x) => (m === null || (x[V] ?? -Infinity) > (m[V] ?? -Infinity) ? x : m), null);
     const minRow = top.reduce((m, x) => (m === null || (x[V] ?? Infinity) < (m[V] ?? Infinity) ? x : m), null);
     if (lowerBetter && minRow && sorted.length > 1) front += `<div class="say">${esc(t("lowest", { a: show(minRow[L]), v: fmt(minRow[V]) }))}</div>`;

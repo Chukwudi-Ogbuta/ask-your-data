@@ -2,7 +2,8 @@
 
 Ask a question in plain English or French about 400,062 packaged foods sold in France. An AI writes the SQL query, the query is checked three ways, and it runs on the data inside your browser. Every answer can be flipped to show the exact query behind it.
 
-**Live tool:** https://chukwudi-ogbuta.github.io/ask-your-data/web/
+**Live tool:** [chukwudi-ogbuta.github.io/ask-your-data/web](https://chukwudi-ogbuta.github.io/ask-your-data/web/)
+
 **Author:** Chukwudi Ogbuta
 
 ---

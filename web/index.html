@@ -7,13 +7,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- the same logo as the browser-tab icon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M8 6h24a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H18l-7 6v-6H8a5 5 0 0 1-5-5V11a5 5 0 0 1 5-5z' fill='none' stroke='%231F5C45' stroke-width='3' stroke-linejoin='round'/%3E%3Crect x='10' y='12' width='20' height='3.4' rx='1.7' fill='%231F5C45'/%3E%3Crect x='10' y='17.6' width='14' height='3.4' rx='1.7' fill='%231F5C45'/%3E%3Crect x='10' y='23.2' width='17' height='3.4' rx='1.7' fill='%231F5C45'/%3E%3C/svg%3E">
   <style>
     /* full-screen layout: side panel on the left, chat on the right */
     .layout { display: flex; height: 100vh; height: 100dvh; }
     aside { width: 280px; flex: none; background: var(--panel); border-right: 1px solid var(--line-2);
             padding: 24px 22px; display: flex; flex-direction: column; overflow-y: auto; }
     .brand { font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+    .tagline { font-size: 13px; color: var(--accent); font-weight: 500; margin-top: 4px; }
     .by { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+    .how { margin: 0; padding: 0; list-style: none; counter-reset: how; font-size: 13px; color: var(--text-2); }
+    .how li { counter-increment: how; display: flex; gap: 10px; margin-bottom: 9px; line-height: 1.45; }
+    .how li::before { content: counter(how); flex: none; width: 20px; height: 20px; border-radius: 50%; background: rgba(31, 92, 69, 0.1);
+                      color: var(--accent); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
     .by a { color: var(--text-3); }
     .rule { height: 1px; background: var(--line-2); margin: 18px 0; border: 0; }
     .sec { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin: 0 0 10px; }
@@ -33,7 +40,11 @@
     .bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; }
     .bar .mobile-title { display: none; font-family: var(--serif); font-size: 18px; font-weight: 500; }
     .bar .menu { display: none; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
-    .lang { display: flex; gap: 2px; background: #EAE6DE; border-radius: 999px; padding: 2px; margin-left: auto; }
+    /* the main message, always visible at the top of the chat, centred over the conversation column */
+    .headline { flex: 1; max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: center; gap: 12px;
+                font-family: var(--serif); font-size: 32px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; color: var(--accent); }
+    .headline .logo { width: 38px; height: 38px; flex: none; color: var(--accent); }
+    .lang { display: flex; gap: 2px; background: #EAE6DE; border-radius: 999px; padding: 2px; flex: none; }
     .lang button { border: 0; background: transparent; border-radius: 999px; padding: 4px 11px; font-size: 12px; color: var(--text-2); }
     .lang button.on { background: var(--accent); color: var(--on-accent); }
 
@@ -128,6 +139,9 @@
       aside.open { transform: none; }
       .bar { padding: 12px 16px; gap: 10px; }
       .bar .mobile-title, .bar .menu { display: block; }
+      .bar { flex-wrap: wrap; }
+      .headline { order: 3; flex-basis: 100%; font-size: 21px; padding: 8px 0 0; gap: 8px; }
+      .headline .logo { width: 26px; height: 26px; }   /* on phones it sits on its own line under the top bar */
       .col { padding: 8px 14px 18px; }
       .dock { padding: 0 12px 12px; }
       .bot, .flip, .bot.wide { max-width: 100%; width: 100%; }
@@ -140,6 +154,13 @@
   <aside id="side">
     <div class="brand" data-t="title">Ask your data</div>
     <div class="by"><span data-t="by">A project by</span> <a href="https://chukwudi-ogbuta.github.io" target="_blank" rel="noopener">Chukwudi Ogbuta</a></div>
+    <hr class="rule">
+    <p class="sec" data-t="secHow">How it works</p>
+    <ol class="how">
+      <li data-t="how1"></li>
+      <li data-t="how2"></li>
+      <li data-t="how3"></li>
+    </ol>
     <hr class="rule">
     <p class="sec" data-t="secData">The data</p>
     <div class="fact"><i style="background:var(--dot-yes)"></i><div><b data-t="inIt">What's in it</b><span data-t="inItText"></span></div></div>
@@ -162,6 +183,16 @@
     <div class="bar">
       <button class="menu" id="menu" data-t="about">About</button>
       <span class="mobile-title" data-t="title">Ask your data</span>
+      <div class="headline">
+        <!-- logo: a speech bubble (the question) holding table rows (the data and its query) -->
+        <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M8 6h24a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H18l-7 6v-6H8a5 5 0 0 1-5-5V11a5 5 0 0 1 5-5z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+          <rect x="10" y="12" width="20" height="3.2" rx="1.6" fill="currentColor"/>
+          <rect x="10" y="17.6" width="14" height="3.2" rx="1.6" fill="currentColor" opacity=".7"/>
+          <rect x="10" y="23.2" width="17" height="3.2" rx="1.6" fill="currentColor" opacity=".45"/>
+        </svg>
+        <span data-t="headline">Turn plain-language questions into SQL</span>
+      </div>
       <div class="lang"><button data-lang="en" class="on">EN</button><button data-lang="fr">FR</button></div>
     </div>
     <div id="thread"><div class="col" id="col" aria-live="polite"></div></div>
