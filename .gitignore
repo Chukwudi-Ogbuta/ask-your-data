@@ -20,3 +20,7 @@ fr_clean_final.parquet
 .Rproj.user/
 Thumbs.db
 desktop.ini
+
+# Wrangler's local scratch folder (account info, cache), rebuilt automatically
+.wrangler/
+node_modules/

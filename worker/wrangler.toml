@@ -1,0 +1,15 @@
+# Cloudflare settings for the Ask Your Data middleman (the "Worker")
+name = "ask-your-data-api"          # becomes part of the web address: ask-your-data-api.<your-account>.workers.dev
+main = "src/index.js"               # the code Cloudflare runs
+compatibility_date = "2026-11-01"   # which version of Cloudflare's runtime to behave like
+
+# lets the code import the AI instructions (a .md file) as plain text
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true   # keep Cloudflare's default rules for other text files too
+
+[vars]
+# websites allowed to call this Worker (your portfolio, plus your own PC for testing)
+ALLOWED_ORIGINS = "https://chukwudi-ogbuta.github.io,http://localhost:8000"
+# the Groq key is NOT here: it is stored as a secret with  npx wrangler secret put GROQ_KEY
